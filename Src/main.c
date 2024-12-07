@@ -116,8 +116,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  ShiftPixel(NeoPixelBuffer);
 	  HAL_SPI_Transmit_DMA(&hspi1, NeoPixelBuffer, NEOPIXEL_BUFFER_SIZE);
+	  ShiftPixel(NeoPixelBuffer);
 	  while(!TxCpltFlag);		//wait DMA TransferComplete!
 	  TxCpltFlag = 0;
 	  HAL_Delay(200);
